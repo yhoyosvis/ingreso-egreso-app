@@ -1,0 +1,16 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "yeferson",
+      "correo": "jeffersonhoyos@gmail.com",
+      "contrasenia": "csdcwdcsdc"
+    },
+    {
+      "correo": "yeferson.hoyos@vis.com.co",
+      "nombre": "Jeferson",
+      "contrasenia": "123456",
+      "id": 2
+    }
+  ]
+}
