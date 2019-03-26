@@ -1,7 +1,14 @@
 
 export class Usuario {
-    public id: number;
+
+   
+    public uid: string;
     public nombre: string;
     public correo: string;
-    public contrasenia: string;
+
+    constructor( uid: string, nombre: string, correo: string){
+        this.nombre = nombre;
+        this.correo = correo;
+        this.uid = uid;
+    }
 }
