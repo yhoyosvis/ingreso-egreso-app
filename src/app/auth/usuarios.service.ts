@@ -25,7 +25,7 @@ export class UsuariosService {
          nombre: nombre,
          correo: resp.user.email
         };
-        this.afDB.doc(`${usuario.uid}/usuario`)
+        this.afDB.doc(`${ usuario.uid }/usuario`)
         .set(usuario)
         .then(() =>{
           
