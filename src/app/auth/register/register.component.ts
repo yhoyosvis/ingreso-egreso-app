@@ -8,10 +8,29 @@ import { Router } from "@angular/router";
   styles: []
 })
 export class RegisterComponent implements OnInit {
-
+ 
   constructor(private usuariosService: UsuariosService , private rutas: Router ) { }
 
+
   ngOnInit() {
+
+  }
+
+  crearUsuario(data: any) {
+    console.log(data);
+    this.usuariosService.crearUsuario(data.correo, data.nombre, data.contrasenia);
+    
+  }
+
+
+
+
+
+
+
+
+
+  /*   ngOnInit() {
     this.usuariosService.getUsuarios()
     .subscribe(hero => {
       console.log(hero[0]);
@@ -25,4 +44,9 @@ export class RegisterComponent implements OnInit {
       this.rutas.navigate(['/']);
     });
   }
-}
+
+  */
+  
+} 
+
+
