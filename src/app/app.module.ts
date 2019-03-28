@@ -5,6 +5,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 
+//NGRX
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './app.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+
 //agularFirebase
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -22,6 +28,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PruebaComponent } from './prueba/prueba.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     DetalleComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +52,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    StoreModule.forRoot(appReducers),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
 
   ],
   providers: [],
