@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { IngresoEgreso } from './ingreso.egreso.model';
+import { IngresoEgreso } from './ingreso-egreso.model';
 
 
 

@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   cargando: boolean;
 
   subscription: Subscription;
-  
+
   constructor(public usuariosService: UsuariosService,
               private store: Store<AppState>) { }
 

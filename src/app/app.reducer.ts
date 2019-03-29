@@ -2,7 +2,7 @@
 
 import * as fromUI from './shared/ui.reducer';
 import * as fromAuth from './auth/auth.reducer';
-import * as fromIngresoEgreso from './ingreso-egreso/ingreso-egreso.reducer';
+// import * as fromIngresoEgreso from './ingreso-egreso/ingreso-egreso.reducer';
 import { ActionReducerMap } from '@ngrx/store';
 
 
@@ -10,7 +10,7 @@ import { ActionReducerMap } from '@ngrx/store';
 export interface AppState{
     ui: fromUI.State,
     auth: fromAuth.AuthState;
-    IngresoEgreso: fromIngresoEgreso.IngresoEgresoState;
+    // IngresoEgreso: fromIngresoEgreso.IngresoEgresoState;
 
 }
 
@@ -18,6 +18,6 @@ export interface AppState{
 export const appReducers: ActionReducerMap<AppState> = {
     ui: fromUI.uiReducer,
     auth: fromAuth.authReducer,
-    IngresoEgreso: fromIngresoEgreso.IngresoEgresoReducer  
+   // IngresoEgreso: fromIngresoEgreso.IngresoEgresoReducer  
 }
 

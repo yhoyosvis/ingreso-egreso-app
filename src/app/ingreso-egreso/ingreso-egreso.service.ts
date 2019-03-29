@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { IngresoEgreso } from './ingreso.egreso.model';
+import { IngresoEgreso } from './ingreso-egreso.model';
 import { UsuariosService } from '../auth/usuarios.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducer';
