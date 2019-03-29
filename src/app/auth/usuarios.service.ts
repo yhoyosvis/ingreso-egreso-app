@@ -4,12 +4,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators'
 
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { Usuario } from './usuario.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducer';
 import { ActivarLoadingAction, DesactivarLoadingAction } from '../shared/ui.actions';
-import { SetUserAction } from './auth.actions';
+import { SetUserAction, unsetUserAction } from './auth.actions';
 import { Subscription } from 'rxjs';
 import { User } from 'firebase';
 
@@ -19,6 +19,7 @@ import { User } from 'firebase';
 export class UsuariosService {
 
   private usuarioSuscrpition: Subscription = new Subscription();
+  private usuario: Usuario;
 
   /*  apiUrl = 'http://localhost:3000'; */
 
@@ -79,12 +80,14 @@ export class UsuariosService {
 
             const newUsuario = new Usuario(usuarioObj);
              this.store.dispatch(new SetUserAction(newUsuario)); 
+             this.usuario = newUsuario;
 
             console.log(newUsuario);
 
           });
 
       } else {
+          this.usuario = null;
           this.usuarioSuscrpition.unsubscribe(); // cancela la subscripcion cuando el usuario no esta autenticado
       }
 
@@ -93,7 +96,9 @@ export class UsuariosService {
 
   cerrarSesion() {
     this.rutas.navigate(['/login']);
-    this.afAuth.auth.signOut()
+    this.afAuth.auth.signOut();
+
+    this.store.dispatch( new unsetUserAction());
   }
 
   estaAutenticado() {
@@ -109,6 +114,9 @@ export class UsuariosService {
       )
   }
 
+  getUsuario() {
+    return {...this.usuario}
+  }
 
   /*   httpOptions = {
       headers: new HttpHeaders({

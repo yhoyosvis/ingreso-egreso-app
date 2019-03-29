@@ -7,7 +7,6 @@ import { dashboardRoutes } from './dashboard/dashboard.routes';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { PruebaComponent } from './prueba/prueba.component';
 
-
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
